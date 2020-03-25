@@ -1,4 +1,4 @@
-# Solutions and comments to hacking ethernauts. See either contract in folder or 
+# Solutions and comments to hacking ethernauts. See either contract in folder or console/terminal command.
 
 # CONTAINS SPOILERS!
 
