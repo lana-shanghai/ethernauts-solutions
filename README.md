@@ -4,11 +4,17 @@
 
 ## Coin Flip
 
-After unsuccessful exercising in psychic readings, we see that each `side` actually is derived from the previous block number, which means that we can easily predict the result by applying the same formula. But when I sent the first few transactions manually, after reaching 5 correct guesses, I saw that my `consecutiveWins` dropped to 0. I attempted sending more transactions and kept running into the same problem. It was wildly frustrating, especially because I sent manual transactions and I was sure that my solution is correct because I got a bunch of guesses right. Anyway, after some time I realized that my transaction is sometimes mined in the `wrong` block, and so my guess, even though it was correct for the previous block, it was wrong for the one it was mined in. So I wrote a contract to mitigate that issue.  
+After unsuccessful exercising in psychic readings, we see that each `side` actually is derived from the previous block number, which means that we can easily predict the result by applying the same formula. But when I sent the first few transactions manually, after reaching 5 correct guesses, I saw that my `consecutiveWins` dropped to 0. I attempted sending more transactions and kept running into the same problem. It was wildly frustrating, especially because I sent manual transactions and I was sure that my solution is correct because I got a bunch of guesses right. Anyway, after some time I realized that my transaction is sometimes mined in the `wrong` block, and so my guess, even though it was correct for the previous block, it was wrong for the one it was mined in. So I wrote a contract to mitigate that issue.
+```
+https://github.com/lana-shanghai/ethernauts-solutions/blob/master/CoinFlip/HackFlip.sol
+```
 
 ## Telephone
 
 Pretty trivial - you need to call the `changeOwner` function from your account address in your contract so that `msg.sender` does not equal `tx.origin` - hence the contract is needed. 
+```
+https://github.com/lana-shanghai/ethernauts-solutions/blob/master/Telephone/HackTelephone.sol
+```
 
 ## Token
 
@@ -24,6 +30,9 @@ tbd
 ## Force
 
 My favorite one. After a number of attempts I stopped trying to shove money to a contract with no payable fallback function and think for a bit. It helped! The way a contract can receive ethers besides a standard `send` or `transfer` is it can also receive a coinbase transaction or be the resolving addresses for a `selfdestruct` function. So I wrote a contract which had a payable `selfdestruct` function and sent myself some ether which triggered the destruction, and the funds were re-directed to my instance. I didn't attmept anything with the mining transactions. 
+```
+https://github.com/lana-shanghai/ethernauts-solutions/blob/master/Force/HackForce.sol
+```
 
 ## Vault 
 
