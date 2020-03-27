@@ -42,4 +42,4 @@ web3.eth.getStorageAt("your_instance_address", 1, function(error, result) {conso
 
 ## King
 
-tbd
+The way the current king is overthrown is first by sending more ether to the contract instance than the current `prize`, and then the ether is forwarded to the previous king. The loophole is to have the king not accept ether by writing a non-accepting fallback function or make the contract you want to hack run out of gas on its call to your hacker contract. 
